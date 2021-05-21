@@ -1,7 +1,7 @@
+# fury-kubernetes-template-module <img src="fury_logo.png" align="right" width="75"/>
+
 [![Release](https://img.shields.io/github/v/release/nandajavarma/fury-kubernetes-template-module)]()
 [![License](https://img.shields.io/github/license/nandajavarma/fury-kubernetes-template-module)]()
-
-# fury-kubernetes-template-module <img src="fury_logo.png" align="right" width="75"/>
 
 <b>`fury-kubernetes-template-module`</b> is a module that works with [fury-distribution](https://github.com/sighupio/fury-distribution) to add consistent repo structure to the modules.
 
