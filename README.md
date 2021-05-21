@@ -2,7 +2,8 @@
  
  # fury-kubernetes-template-module
 
-[![Release](https://img.shields.io/github/v/release/nandajavarma/fury-kubernetes-template-module)]()
+[![Release](https://img.shields.io/github/v/release/nandajavarma/fury-kubernetes-template-module?label=ModuleRelease)]()
+[![Release](https://img.shields.io/github/v/release/sighupio/fury-distribution?label=FuryDistributionRelease)]()
 [![License](https://img.shields.io/github/license/nandajavarma/fury-kubernetes-template-module)]()
 [![Slack](https://img.shields.io/badge/slack-@kubernetes/fury-yellow.svg?logo=slack)]()
 
