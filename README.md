@@ -1,4 +1,6 @@
-# fury-kubernetes-template-module <img src="fury_logo.png" align="right" width="75"/>
+ <img src="fury_logo.png" align="left" width="75"/> 
+ 
+ # fury-kubernetes-template-module
 
 [![Release](https://img.shields.io/github/v/release/nandajavarma/fury-kubernetes-template-module)]()
 [![License](https://img.shields.io/github/license/nandajavarma/fury-kubernetes-template-module)]()
