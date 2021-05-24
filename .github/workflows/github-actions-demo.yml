@@ -17,7 +17,7 @@ jobs:
         dst_owner: nandajavarma
         dst_repo_name: doc-site-poc
         dst_branch: main
-        src_branch: master
+        src_branch: main
         src_wiki: false
         dst_wiki: false
         username: nandajavarma
