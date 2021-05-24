@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo ::set-env name=REPO_NAME::${{ github.repository.name }}
-        echo "REPOSITORY_NAME=${REPO_NAME}" >> $GITHUB_ENV
+        echo "REPOSITORY_NAME=${{ github.repository.name }}" >> $GITHUB_ENV
     - name: Copycat
       uses: andstor/copycat-action@v3
       with:
