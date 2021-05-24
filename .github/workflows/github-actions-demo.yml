@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-      echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
-      echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
+        echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+        echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
     - name: Copycat
       uses: andstor/copycat-action@v3
       with:
