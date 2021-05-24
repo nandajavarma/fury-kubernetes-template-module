@@ -12,13 +12,13 @@ jobs:
       uses: andstor/copycat-action@v3
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        src_path: /docs/.
-        dst_path: /docs/${GITHUB_REPOSITORY#*/}
+        src_path: docs/.
+        dst_path: docs/${GITHUB_REPOSITORY#*/}
         dst_owner: nandajavarma
         dst_repo_name: doc-site-poc
         dst_branch: master
         src_branch: master
-        src_wiki: true
+        src_wiki: false
         dst_wiki: false
         username: nandajavarma
         email: nandaja.varma@gmail.com
