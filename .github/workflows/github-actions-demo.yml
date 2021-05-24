@@ -8,23 +8,16 @@ jobs:
   copy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: "call action"
-      id: last_release
-      uses: InsonusK/get-latest-release@v1.0.1
-      with:
-        myToken: ${{ github.token }}
-        exclude_types: "release"
-        view_top: 1
     - run: |
-        echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+        echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
         echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
+        echo "GITHUB_REF=${GITHUB_REF##*/}" >> $GITHUB_ENV
     - name: Copycat
       uses: andstor/copycat-action@v3
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         src_path: docs/.
-        dst_path: docs/${{steps.last_release.outputs.name}}/${{ env.GITHUB_REPOSITORY }}
+        dst_path: docs/${{env.GITHUB_REF}}/${{ env.GITHUB_REPOSITORY }}
         dst_owner: nandajavarma
         dst_repo_name: doc-site-poc
         dst_branch: main
