@@ -13,7 +13,7 @@ jobs:
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         src_path: docs/.
-        dst_path: docs/${{ GITHUB_REPOSITORY#*/ }}
+        dst_path: docs/${{ GITHUB_REPOSITORY }}
         dst_owner: nandajavarma
         dst_repo_name: doc-site-poc
         dst_branch: main
