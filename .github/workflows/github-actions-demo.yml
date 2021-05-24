@@ -11,12 +11,13 @@ jobs:
     - run: |
         echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
         echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
+        echo "REPOSITORY_NAME=${REPOSITORY_NAME}" >> $GITHUB_ENV
     - name: Copycat
       uses: andstor/copycat-action@v3
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         src_path: docs/.
-        dst_path: docs/${{ env.GITHUB_REPOSITORY }}
+        dst_path: docs/${{ env.REPOSITORY_NAME }}
         dst_owner: nandajavarma
         dst_repo_name: doc-site-poc
         dst_branch: main
