@@ -1,0 +1,24 @@
+name: Doc Build action
+on:
+  push:
+    branches:
+    - main
+    - master
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copycat
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_path: /docs/.
+        dst_path: /docs/${GITHUB_REPOSITORY#*/}
+        dst_owner: nandajavarma
+        dst_repo_name: doc-site-poc
+        dst_branch: master
+        src_branch: master
+        src_wiki: true
+        dst_wiki: false
+        username: nandajavarma
+        email: nandaja.varma@gmail.com
