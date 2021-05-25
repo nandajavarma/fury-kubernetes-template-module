@@ -32,7 +32,20 @@ jobs:
         dst_wiki: false
         username: nandajavarma
         email: nandaja.varma@gmail.com
-    - name: Copycat for Sphinx doc
+  copy-for-sphinx:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
+        echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
+        echo "GITHUB_REF=${GITHUB_REF##*/}" >> $GITHUB_ENV
+    - id: releases
+      uses: pozetroninc/github-action-get-latest-release@master
+      with:
+        owner: nandajavarma
+        repo: ${{ env.GITHUB_REPOSITORY }}
+        excludes: prerelease, draft
+    - name: Copycat
       uses: andstor/copycat-action@v3
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
