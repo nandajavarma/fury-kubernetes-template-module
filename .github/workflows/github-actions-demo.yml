@@ -59,3 +59,28 @@ jobs:
         dst_wiki: false
         username: nandajavarma
         email: nandaja.varma@gmail.com
+  copy-for-docusourus:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
+    - id: releases
+      uses: pozetroninc/github-action-get-latest-release@master
+      with:
+        owner: nandajavarma
+        repo: ${{ env.GITHUB_REPOSITORY }}
+        excludes: prerelease, draft
+    - name: Copycat
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_path: docs/.
+        dst_path: ${{ env.GITHUB_REPOSITORY }}
+        dst_owner: nandajavarma
+        dst_repo_name: doc-site-poc
+        dst_branch: docusourus
+        src_branch: main
+        src_wiki: false
+        dst_wiki: false
+        username: nandajavarma
+        email: nandaja.varma@gmail.com
