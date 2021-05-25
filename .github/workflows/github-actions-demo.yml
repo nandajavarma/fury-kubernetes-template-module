@@ -23,10 +23,24 @@ jobs:
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         src_path: docs/.
-        dst_path: docs/${{ steps.releases.outputs.release }}/${{ env.GITHUB_REPOSITORY }}
+        dst_path: docs/${{ env.GITHUB_REPOSITORY }}/${{ steps.releases.outputs.release }}
         dst_owner: nandajavarma
         dst_repo_name: doc-site-poc
         dst_branch: main
+        src_branch: main
+        src_wiki: false
+        dst_wiki: false
+        username: nandajavarma
+        email: nandaja.varma@gmail.com
+    - name: Copycat for Sphinx doc
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_path: docs/.
+        dst_path: source/docs/${{ env.GITHUB_REPOSITORY }}/${{ steps.releases.outputs.release }}
+        dst_owner: nandajavarma
+        dst_repo_name: doc-site-poc
+        dst_branch: sphinx
         src_branch: main
         src_wiki: false
         dst_wiki: false
